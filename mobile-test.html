@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Poisson Distribution</title>
+	<script type="text/javascript" src="p.js"></script>
+</head>
+<body><div class="content">	<h1 class="article-heading">PoissonDistribution</h1>	<div class="article-content">
+<p>
+In probability theory</a> and statistics</a>, the <b>Poisson distribution</b> (pronounced ) is a discrete probability distribution</a> that expresses the probability of a given number of events occurring in a fixed interval of time and/or space if these events occur with a known average rate and independently</a> of the time since the last event. (The Poisson distribution can also be used for the number of events in other specified intervals such as distance, area or volume.)
+
+</p><p>Suppose someone typically gets 4 pieces of mail per day. That becomes the expectation, but there will be a certain spread: sometimes a little more, sometimes a little less, once in a while nothing at all. Given only the average rate, for a certain period of observation (pieces of mail per day, phonecalls per hour, etc.), and assuming that the process, or mix of processes, that produce the event flow are essentially random, the Poisson distribution specifies how likely it is that the count will be 3, or 5, or 11, or any other number, during one period of observation. That is, it predicts the degree of spread around a known average rate of occurrence.
+
+</p><p>The distribution&#39;s practical usefulness has been explained by the <b>Poisson law of small numbers</b>.
+
+</p><div class="section" id="s0">	<h2> History </h2>	<div class="section-body">
+<p>The distribution was first introduced by Siméon Denis Poisson</a> (1781–1840) and published, together with his probability theory, in 1837 in his work <i>Recherches sur la probabilité des jugements en matière criminelle et en matière civile</i> (“Research on the Probability of Judgments in Criminal and Civil Matters”). The work focused on certain random variables</a> <i>N</i> that count, among other things, the number of discrete occurrences (sometimes called “arrivals”) that take place during a time</a>-interval of given length.
+
+</p><p>A practical application of this distribution was made by Ladislaus Bortkiewicz</a> in 1898 when he was given the task of investigating the number of soldiers in the Prussian army killed accidentally by horse kick; this experiment introduced the Poisson distribution to the field of reliability engineering</a>.
+
+</p>	</div></div><div class="section" id="s1">	<h2> Definition </h2>	<div class="section-body">
+<p>A discrete stochastic variable</a> <i>X</i> is said to have a Poisson distribution with parameter <i>λ</i>&gt;0,  if for <i>k</i> = 0, 1, 2, ... the probability mass function</a> of <i>X</i> is given by:
+
+</p><dl><dd>//$\!f(k; \lambda)= \Pr(X=k)= \frac{\lambda^k e^{-\lambda}}{k!},//$</dd></dl>
+
+<p>where
+</p><ul><li> <i>e</i> is the base of the natural logarithm</a> (<i>e</i> = 2.71828...)</li><li> <i>k</i>! is the factorial</a> of <i>k</i></li></ul>
+
+<p>The positive real number</a> <i>λ</i> is equal to the expected value</a> of <i>X</i>, but also to the variance</a>:
+
+</p><dl><dd>//$\lambda=\operatorname{E}(X)=\operatorname{var}(X).//$</dd></dl>
+
+<p>The Poisson distribution can be applied to systems with a large number of possible events, each of which is rare. The Poisson distribution is sometimes called a Poissonian.
+
+</p>	</div></div><div class="section" id="s2">	<h2> Properties </h2>	<div class="section-body">
+
+<div class="section" id="s3">	<h3>Mean</h3>	<div class="section-body">
+
+<ul><li>The expected value</a> of a Poisson-distributed random variable is equal to λ and so is its variance</a>.</li><li>The coefficient of variation</a> is //$\textstyle \lambda^{-1/2}//$, while the index of dispersion</a> is 1.</li><li>The mean deviation</a> about the mean is</li></ul><dl><dd><dl><dd>//$\operatorname{E}|X-\lambda|= 2\exp(-\lambda) \frac{\lambda^{\lfloor\lambda\rfloor}}{ \lfloor\lambda\rfloor!} .//$</dd></dl></dd></dl><ul><li>The mode</a> of a Poisson-distributed random variable with non-integer λ is equal to //$\scriptstyle\lfloor \lambda \rfloor//$, which is the largest integer less than or equal to λ. This is also written as floor</a>(λ). When λ is a positive integer, the modes are λ and λ&nbsp;&minus;&nbsp;1.</li><li>All of the cumulants</a> of the Poisson distribution are equal to the expected value λ. The <i>n</i>th factorial moment</a> of the Poisson distribution is λ<sup><i>n</i></sup>.</li></ul>
+
+	</div></div><div class="section" id="s4">	<h3>Median</h3>	<div class="section-body">
+
+<p>Bounds for the median ( <i>ν</i> ) of the distribution are known and are sharp:
+
+</p><dl><dd> //$ \mu - log_e{2} \le \nu &lt; \mu + \frac{ 1 }{ 3 } //$</dd></dl>
+
+	</div></div><div class="section" id="s5">	<h3>Higher moments</h3>	<div class="section-body">
+
+<ul><li>The higher moments</a> <i>m</i><sub>k</sub> of the Poisson distribution about the origin  are Touchard polynomials</a> in λ:</li></ul><dl><dd>//$ m_k = \sum_{i=0}^k \lambda^i S_{i:k},//$</dd></dl>
+
+<p>where 
+</p><dl><dd>//$ S_{n:s}= \frac{1}{n!} \sum_{i=0}^n (-1)^{n-i} //$</dd></dl>
+
+<p>are Stirling numbers</a> of the second kind. The coefficients of the polynomials have a combinatorial</a> meaning. In fact, when the expected value of the Poisson distribution is 1, then Dobinski's formula</a> says that the <i>n</i>th moment equals the number of partitions of a set</a> of size <i>n</i>.
+</p><ul><li>Sums of Poisson-distributed random variables:</li></ul><dl><dd> If //$X_i \sim \mathrm{Pois}(\lambda_i)\, i=1,\dots,n//$ are independent</a>, and //$\lambda=\sum_{i=1}^n \lambda_i//$, then //$Y = \sum_{i=1}^n X_i \sim \mathrm{Pois}(\lambda)//$.  A converse is Raikov's theorem</a>, which says that if the sum of two independent random variables is Poisson-distributed, then so is each of those two independent random variables.</dd></dl>
+
+	</div></div><div class="section" id="s6">	<h3>Other properties</h3>	<div class="section-body">
+
+<ul><li>The Poisson distributions are infinitely divisible</a> probability distributions.</li><li>The directed Kullback-Leibler divergence</a> between Pois(λ) and Pois(λ<sub>0</sub>) is given by</li></ul>
+
+<dl><dd><dl><dd> //$D_{\mathrm{KL}}(\lambda\|\lambda_0) = \lambda_0 - \lambda + \lambda \log \frac{\lambda}{\lambda_0}.//$</dd></dl></dd></dl>
+
+<ul><li> Bounds for the tail probabilities of a Poisson random variable //$ X \sim \text{Pois}(\lambda)//$ can be derived using a Chernoff bound</a> argument. </li></ul><dl><dd><dl><dd> //$ P(X \geq x) \leq \frac{e^{-\lambda} (e \lambda)^x}{x^x}, \text{ for } x &gt; \lambda ,//$</dd></dl></dd></dl>
+
+<dl><dd><dl><dd> //$ P(X \leq x) \leq \frac{e^{-\lambda} (e \lambda)^x}{x^x}, \text{ for } x &lt; \lambda .//$</dd></dl></dd></dl>
+
+	</div></div>	</div></div><div class="section" id="s7">	<h2> Related distributions </h2>	<div class="section-body">
+<ul><li> If //$X_1 \sim \mathrm{Pois}(\lambda_1)\,//$ and //$X_2 \sim \mathrm{Pois}(\lambda_2)\,//$ are independent, then the difference //$ Y = X_1 - X_2//$ follows a Skellam distribution</a>.</li><li> If //$X_1 \sim \mathrm{Pois}(\lambda_1)\,//$ and //$X_2 \sim \mathrm{Pois}(\lambda_2)\,//$ are independent, then the distribution of //$X_1//$ conditional on //$X_1+X_2//$ is a binomial distribution</a>. Specifically, given //$X_1+X_2=k//$, //$\!X_1\sim \mathrm{Binom}(k, \lambda_1/(\lambda_1+\lambda_2))//$. More generally, if <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>,..., <i>X</i><sub><i>n</i></sub> are independent Poisson random variables with parameters λ<sub>1</sub>, λ<sub>2</sub>,..., λ<sub><i>n</i></sub> then</li></ul><dl><dd><dl><dd> given //$\sum_{j=1}^n X_j=k,//$ //$X_i \sim \mathrm{Binom}\left(k, \frac{\lambda_i}{\sum_{j=1}^n\lambda_j}\right)//$. In fact, //$\{X_i\} \sim \mathrm{Multinom}\left(k, \left\{\frac{\lambda_i}{\sum_{j=1}^n\lambda_j}\right\}\right)//$.</dd></dl></dd></dl><ul><li>The Poisson distribution can be derived as a limiting case to the binomial distribution as the number of trials goes to infinity and the expected</a> number of successes remains fixed — see law of rare events</a> below. Therefore it can be used as an approximation of the binomial distribution if <i>n</i> is sufficiently large and <i>p</i> is sufficiently small. There is a rule of thumb stating that the Poisson distribution is a good approximation of the binomial distribution if n is at least 20 and <i>p</i> is smaller than or equal to 0.05, and an excellent approximation if <i>n</i> ≥ 100 and <i>np</i> ≤ 10.</li></ul><dl><dd><dl><dd>  //$F_\mathrm{Binomial}(k;n, p) \approx F_\mathrm{Poisson}(k;\lambda=np)\,//$</dd></dl></dd></dl><ul><li>For sufficiently large values of λ, (say λ&gt;1000), the normal distribution</a> with mean λ and variance λ (standard deviation //$\sqrt{\lambda}//$), is an excellent approximation to the Poisson distribution. If λ is greater than about 10, then the normal distribution is a good approximation if an appropriate continuity correction</a> is performed, i.e., P(<i>X</i>&nbsp;≤&nbsp;<i>x</i>), where (lower-case) <i>x</i> is a non-negative integer, is replaced by P(<i>X</i>&nbsp;≤&nbsp;<i>x</i>&nbsp;+&nbsp;0.5).</li></ul><dl><dd><dl><dd>  //$F_\mathrm{Poisson}(x;\lambda) \approx F_\mathrm{normal}(x;\mu=\lambda,\sigma^2=\lambda)\,//$</dd></dl></dd></dl><ul><li> Variance-stabilizing transformation</a>: When a variable is <b>Poisson distributed</b>, its square root is approximately normally distributed with expected value of about //$\sqrt \lambda//$ and variance of about 1/4.  Under this transformation, the convergence to normality (as λ increases) is far faster than the untransformed variable. Other, slightly more complicated, variance stabilizing transformations are available, one of which is Anscombe transform</a>. See Data transformation (statistics)</a> for more general uses of transformations.</li><li> If for every <i>t &gt; 0</i> the number of arrivals in the time interval [0,<i>t</i>] follows the Poisson distribution with mean  <i>λ t</i>, then the sequence of inter-arrival times are independent and identically distributed exponential</a> random variables having mean 1 / λ.</li><li>The cumulative distribution functions</a> of the Poisson and chi-squared distributions</a> are related in the following ways:</li></ul><dl><dd><dl><dd>//$F_\text{Poisson}(k;\lambda)  = 1- F_{\chi^2}(2\lambda;2(k+1))  \quad\quad \text{ integer } k,//$</dd></dl></dd><dd>and<dl><dd>//$\Pr(X=k)=F_{\chi^2}(2\lambda;2k)  -F_{\chi^2}(2\lambda;2(k+1)) . 
+//$</dd></dl></dd></dl>
+
+	</div></div><div class="section" id="s8">	<h2> Occurrence </h2>	<div class="section-body">
+
+<p>Applications of the Poisson distribution can be found in many fields related to counting:
+</p><ul><li> Electrical system</a> example: telephone calls arriving in a system.</li><li> Astronomy</a> example: photons arriving at a telescope.</li><li> Biology</a> example: the number of mutations on a strand of DNA</a> per unit time.</li><li> Management</a> example: customers arriving at a counter or call centre.</li><li> Civil Engineering</a> example: cars arriving at a traffic light.</li><li> Finance and Insurance</a> example: Number of Losses/Claims occurring in a given period of Time.</li></ul>
+
+<p>The Poisson distribution arises in connection with Poisson processes</a>. It applies to various phenomena of discrete properties (that is, those that may happen 0, 1, 2, 3, ... times during a given period of time or in a given area) whenever the probability of the phenomenon happening is constant in time or space</a>. Examples of events that may be modelled as a Poisson distribution include:
+</p><pre>  
+</pre>
+<ul><li> The number of soldiers killed by horse-kicks each year in each corps in the Prussian</a> cavalry. This example was made famous by a book of Ladislaus Josephovich Bortkiewicz</a> (1868–1931).</li><li> The number of yeast cells used when brewing Guinness</a> beer. This example was made famous by William Sealy Gosset</a> (1876–1937).</li><li> The number of phone calls arriving at a call centre</a> per minute.</li><li> The number of goals in sports involving two competing teams.</li><li> The number of deaths per year in a given age group.</li><li> The number of jumps in a stock price in a given time interval.</li><li> Under an assumption of homogeneity</a>, the number of times a web server</a> is accessed per minute.</li><li> The number of mutations</a> in a given stretch of DNA</a> after a certain amount of radiation.</li><li> The proportion of cells</a> that will be infected at a given multiplicity of infection</a>.</li></ul>
+
+<p>
+
+</p><div class="section" id="s9">	<h3> How does this distribution arise? — The <i>law of rare events</i> </h3>	<div class="section-body">
+<p>
+
+
+</p><p>In several of the above examples—such as, the number of mutations in a given sequence of DNA—the events being counted are actually the outcomes of discrete trials, and would more precisely be modelled using the binomial distribution</a>, that is
+
+</p><dl><dd>//$X \sim \textrm{B}(n,p). \,//$</dd></dl>
+
+<p>In such cases <i>n</i> is very large and <i>p</i> is very small (and so the expectation <i>np</i> is of intermediate magnitude). Then the distribution may be approximated by the less cumbersome Poisson distribution
+
+</p><dl><dd>//$X \sim \textrm{Pois}(np). \,//$</dd></dl>
+
+<p>This is sometimes known as the <b>law of rare events</b>, since each of the <i>n</i> individual Bernoulli events</a> rarely occurs. The name may be misleading because the total count of success events in a Poisson process need not be rare if the parameter <i>np</i> is not small. For example, the number of telephone calls to a busy switchboard in one hour follows a Poisson distribution with the events appearing frequent to the operator, but they are rare from the point of view of the average member of the population who is very unlikely to make a call to that switchboard in that hour.
+
+</p><p>The word <b>law</b> is sometimes used as a synonym of probability distribution</a>, and <i>convergence in law</i> means <i>convergence in distribution</i>. Accordingly, the Poisson distribution is sometimes called the <b>law of small numbers</b> because it is the probability distribution of the number of occurrences of an event that happens rarely but has very many opportunities to happen. <i>The Law of Small Numbers</i> is a book by Ladislaus Bortkiewicz</a> about the Poisson distribution, published in 1898. Some have suggested that the Poisson distribution should have been called the Bortkiewicz distribution.
+
+</p>	</div></div><div class="section" id="s10">	<h3> Multi-dimensional Poisson process </h3>	<div class="section-body">
+
+<p>
+
+</p><p>The poisson distribution arises as the distribution of counts of occurrences of events in (multidimensional) intervals in mutlidimensional Poisson processes</a> in a directly equivalent way to the result for unidimensional processes. This,is <i>D</i> is any region the multidimensional space for which |D|, the area or volume of the region, is finite, and if  is count of the number of events in <i>D</i>, then
+
+</p><dl><dd> //$ P(N(D)=k)=\frac{(\lambda|D|)^k e^{-\lambda|D|}}{k!} .//$</dd></dl>
+
+	</div></div><div class="section" id="s11">	<h3>Other applications in science</h3>	<div class="section-body">
+
+<p>In a Poisson process, the number of observed occurrences fluctuates about its mean <i>λ</i> with a standard deviation</a> //$\sigma_k =\sqrt{\lambda}//$. These fluctuations are denoted as <b>Poisson noise</b> or (particularly in electronics) as <i>shot noise</a></i>.
+
+</p><p>The correlation of the mean and standard deviation in counting independent discrete occurrences is useful scientifically. By monitoring how the fluctuations vary with the mean signal, one can estimate the contribution of a single occurrence, <i>even if that contribution is too small to be detected directly</i>. For example, the charge <i>e</i> on an electron can be estimated by correlating the magnitude of an electric current</a> with its shot noise</a>. If <i>N</i> electrons pass a point in a given time <i>t</i> on the average, the mean</a> current</a> is //$I=eN/t//$; since the current fluctuations should be of the order //$\sigma_I=e\sqrt{N}/t//$ (i.e., the standard deviation of the Poisson process</a>), the charge //$e//$ can be estimated from the ratio //$\sigma_I^2/I//$. 
+
+</p><p>An everyday example is the graininess that appears as photographs are enlarged; the graininess is due to Poisson fluctuations in the number of reduced silver</a> grains, not to the individual grains themselves. By correlating</a> the graininess with the degree of enlargement, one can estimate the contribution of an individual grain (which is otherwise too small to be seen unaided). Many other molecular applications of Poisson noise have been developed, e.g., estimating the number density of receptor</a> molecules in a cell membrane</a>.
+</p><dl><dd> //$
+    \Pr(N_t=k) = f(k;\lambda t) = \frac{e^{-\lambda t} (\lambda t)^k}{k!} .  //$</dd></dl>
+
+	</div></div>	</div></div><div class="section" id="s12">	<h2> Generating Poisson-distributed random variables </h2>	<div class="section-body">
+
+<p>A simple algorithm to generate random Poisson-distributed numbers (pseudo-random number sampling</a>) has been given by Knuth</a> (see References below):
+
+</p><pre><b>algorithm</b> <i>poisson random number (Knuth)</i>:
+    <b>init</b>:
+         <b>Let</b> L ← <i>e</i><sup>−λ</sup>, k ← 0 and p ← 1.
+    <b>do</b>:
+         k ← k + 1.
+         Generate uniform random number u in [0,1] and <b>let</b> p ← p × u.
+    <b>while</b> p &gt; L.
+    <b>return</b> k − 1.
+</pre>
+
+<p>While simple, the complexity is linear in λ. There are many other algorithms to overcome this. Some are given in Ahrens &amp; Dieter, see References below. Also, for large values of λ, there may be numerical stability issues because of the term <i>e</i><sup>−λ</sup>. One solution for large values of λ is Rejection sampling</a>, another is to use a Gaussian approximation to the Poisson.
+
+</p><p>Inverse transform sampling</a> is simple and efficient for small values of λ, and requires only one uniform random number <i>u</i> per sample. Cumulative probabilities are examined in turn until one exceeds <i>u</i>.
+
+</p>	</div></div><div class="section" id="s13">	<h2> Parameter estimation </h2>	<div class="section-body">
+<div class="section" id="s14">	<h3> Maximum likelihood </h3>	<div class="section-body">
+<p>Given a sample of <i>n</i> measured values <i>k</i><sub><i>i</i></sub> we wish to estimate the value of the parameter <i>λ</i> of the Poisson population from which the sample was drawn. The maximum likelihood</a> estimate is
+
+</p><dl><dd>//$\widehat{\lambda}_\mathrm{MLE}=\frac{1}{n}\sum_{i=1}^n k_i. \!//$</dd></dl>
+
+<p>Since each observation has expectation λ so does this sample mean. Therefore the maximum likelihood estimate is an unbiased estimator</a> of λ. It is also an efficient estimator, i.e. its estimation variance achieves the Cramér–Rao lower bound</a> (CRLB). Hence it is MVUE</a>. Also it can be proved that the sample mean is a complete and sufficient statistic for λ.
+
+</p>	</div></div><div class="section" id="s15">	<h3> Confidence interval </h3>	<div class="section-body">
+<p>The confidence interval for a Poisson mean is calculated using the relationship between the Poisson and Chi-square</a> distributions, and can be written as:
+
+</p><dl><dd>//$\frac{\chi^{2}(\alpha/2; 2k)}{2} \le \mu \le \frac{\chi^{2}(1-\alpha/2; 2k+2)}{2}//$</dd></dl>
+
+<p>where <i>k</i> is the number of event occurrences in a given interval and //$\chi^{2}(p;n)//$ is the chi-square</a> deviate with lower tail area <i>p</i> and degrees of freedom <i>n</i>. This interval is &#39;exact</a>&#39; in the sense that its coverage probability</a> is never less than the nominal .
+
+</p><p>When quantiles of the chi-square distribution are not available, an accurate approximation to this exact interval was proposed by DP Byar (based on the Wilson–Hilferty transformation</a>):
+</p><dl><dd>//$k \left( 1 - \frac{1}{9k} - \frac{z_{\alpha/2}}{3\sqrt{k}}\right)^3 \le \mu \le (k+1) \left( 1 - \frac{1}{9(k+1)} + \frac{z_{\alpha/2}}{3\sqrt{k+1}}\right)^3 //$,</dd></dl>
+<p>where //$z_{\alpha/2}//$ denotes the standard normal deviate</a> with upper tail area .
+
+</p><p>For application of these formulae in the same context as above (given a sample of <i>n</i> measured values <i>k</i><sub><i>i</i></sub>), one would set
+</p><pre>
+</pre>
+<dl><dd>//$k=\sum_{i=1}^n k_i ,\!//$</dd></dl>
+<p>calculate an interval for <i>&mu;=n&lambda;</i>, and then derive the interval for <i>&lambda;</i>.
+
+</p>	</div></div><div class="section" id="s16">	<h3> Bayesian inference </h3>	<div class="section-body">
+
+<p>In Bayesian inference</a>, the conjugate prior</a> for the rate parameter <i>λ</i> of the Poisson distribution is the gamma distribution</a>. Let
+
+</p><dl><dd>//$\lambda \sim \mathrm{Gamma}(\alpha, \beta) \!//$</dd></dl>
+
+<p>denote that <i>λ</i> is distributed according to the gamma density</a> <i>g</i> parameterized in terms of a shape parameter</a> <i>α</i> and an inverse scale parameter</a> <i>β</i>:
+
+</p><dl><dd>//$ g(\lambda \mid \alpha,\beta) = \frac{\beta^{\alpha}}{\Gamma(\alpha)} \; \lambda^{\alpha-1} \; e^{-\beta\,\lambda} \qquad \text{ for } \lambda&gt;0 \,\!.//$</dd></dl>
+
+<p>Then, given the same sample of <i>n</i> measured values <i>k</i><sub><i>i</i></sub> as before</a>, and a prior of Gamma(<i>α</i>, <i>β</i>), the posterior distribution is
+
+</p><dl><dd>//$\lambda \sim \mathrm{Gamma}(\alpha + \sum_{i=1}^n k_i, \beta + n). \!//$</dd></dl>
+
+<p>The posterior mean E[<i>λ</i>] approaches the maximum likelihood estimate //$\widehat{\lambda}_\mathrm{MLE}//$ in the limit as //$\alpha\to 0,\ \beta\to 0//$.
+
+</p><p>The posterior predictive distribution for a single additional observation is a negative binomial distribution</a> distribution, sometimes called a Gamma-Poisson distribution.
+
+</p>	</div></div>	</div></div><div class="section" id="s17">	<h2> See also </h2>	<div class="section-body">
+<p>
+</p><ul><li> Compound Poisson distribution</a></li><li> Conway–Maxwell–Poisson distribution</a></li><li> Erlang distribution</a></li><li> Index of dispersion</a></li><li> Negative binomial distribution</a></li><li> Poisson regression</a></li><li> Poisson sampling</a></li><li> Queueing theory</a></li><li> Renewal theory</a></li><li> Robbins lemma</a></li><li> Tweedie distributions</a></li></ul>
+<p>
+
+</p>	</div></div>	</div></div></div>
+</body></html>
