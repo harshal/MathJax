@@ -1,3 +1,11 @@
+function loadJS(name) {
+    var head = document.getElementsByTagName("head")[0], script;
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = name;
+    head.appendChild(script);
+}
+
 function loadMathJax() {
   setTimeout(function () {
     var head = document.getElementsByTagName("head")[0], script;
@@ -25,11 +33,15 @@ function loadMathJax() {
       "MathJax.Hub.Register.StartupHook('End Config',function () {MathJax.Hub.config.menuSettings.renderer = 'HTML-CSS'});"
     head.appendChild(script);
     
-    script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "MathJax.js?config=default";
-    head.appendChild(script);
+    loadJS("MathJax.js?config=default");
   },20)
+}
+
+function toggleMenu() {
+	var m = document.getElementById('menu');
+	if(m.style.display != 'block')
+		{m.style.display='block';}
+	scroll(0,0);
 }
 
 window.onload = function() {
